@@ -19,7 +19,7 @@ public class FindPhoneCommandParser implements Parser<FindPhoneCommand> {
     public FindPhoneCommand parse(String args) throws ParseException {
         String trimmedArgs = args.trim();
 
-        if (trimmedArgs.isEmpty() || !trimmedArgs.matches("\\d+")) {
+        if (trimmedArgs.isEmpty() || !trimmedArgs.matches("\\d{1,8}")) {
             throw new ParseException(
                     String.format(MESSAGE_INVALID_COMMAND_FORMAT, FindPhoneCommand.MESSAGE_USAGE));
         }
